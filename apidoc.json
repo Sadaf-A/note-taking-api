@@ -1,0 +1,9 @@
+{
+    "name": "Note Taking API",
+    "version": "1.0.0",
+    "description": "An API for handling note taking",
+    "title": "Note Taking API",
+    "url": "http://localhost:3000", 
+    "sampleUrl": "http://localhost:3000"
+}
+  
