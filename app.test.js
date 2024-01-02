@@ -7,7 +7,7 @@ describe("API Endpoints", () => {
   it("should create a new note", async () => {
     const response = await request(app)
       .post("/api/notes")
-      .auth("user", "password") // Add authentication
+      .auth("user", "password")
       .send({
         title: "Test Note",
         content: "This is a test note.",
@@ -22,7 +22,7 @@ describe("API Endpoints", () => {
   it("should get all notes", async () => {
     const response = await request(app)
       .get("/api/notes/get")
-      .auth("user", "password"); // Add authentication
+      .auth("user", "password"); 
 
     expect(response.statusCode).toBe(200);
     expect(response.body).toBeInstanceOf(Array);
@@ -31,7 +31,7 @@ describe("API Endpoints", () => {
   it("should update a note", async () => {
     const response = await request(app)
       .put(`/api/notes/${noteId}`)
-      .auth("user", "password") // Add authentication
+      .auth("user", "password")
       .send({
         title: "Updated Test Note",
         content: "This is the updated test note.",
@@ -45,7 +45,7 @@ describe("API Endpoints", () => {
   it("should delete a note", async () => {
     const response = await request(app)
       .delete(`/api/notes/${noteId}`)
-      .auth("user", "password"); // Add authentication
+      .auth("user", "password"); 
 
     expect(response.statusCode).toBe(200);
   });

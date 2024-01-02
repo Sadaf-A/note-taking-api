@@ -43,3 +43,9 @@ exports.deleteNote = async (req, res) => {
   const notes = await NoteService.deleteNote(noteId);
   res.send(notes);
 };
+
+exports.getNote = async (req, res) => {
+    const noteId = await req.params.noteId;
+    const note = await NoteService.getNoteById(noteId);
+    res.send(note);
+};

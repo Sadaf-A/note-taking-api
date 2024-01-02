@@ -10,7 +10,7 @@ const noteController = require("../controllers/NoteController");
  */
 
 /**
- * @api {post} /notes Create a new note
+ * @api {post} /api/notes Create a new note
  * @apiGroup Notes
  * @apiParam {String} title Note title (minimum 3, maximum 50 characters).
  * @apiParam {String} content Note content (minimum 3, maximum 500 characters).
@@ -25,7 +25,7 @@ const noteController = require("../controllers/NoteController");
 router.post("/notes", noteController.createNote);
 
 /**
- * @api {get} /notes/get Get all notes
+ * @api {get} /api/notes/get Get all notes
  * @apiGroup Notes
  * @apiUse Note
  * @apiSuccessExample {json} Success Response:
@@ -44,7 +44,7 @@ router.post("/notes", noteController.createNote);
 router.get("/notes/get", noteController.getNotes);
 
 /**
- * @api {put} /notes/:noteId Update a note by ID
+ * @api {put} /api/notes/:noteId Update a note by ID
  * @apiGroup Notes
  * @apiParam {String} noteId Note ID.
  * @apiParam {String} title Note title (minimum 3, maximum 50 characters).
@@ -60,7 +60,21 @@ router.get("/notes/get", noteController.getNotes);
 router.put("/notes/:noteId", noteController.updateNote);
 
 /**
- * @api {delete} /notes/:noteId Delete a note by ID
+ * @api {delete} /api/notes/:noteId Delete a note by ID
+ * @apiGroup Notes
+ * @apiParam {String} noteId Note ID.
+ * @apiUse Note
+ * @apiSuccessExample {json} Success Response:
+ *   HTTP/1.1 200 OK
+ *   {
+ *     "acknowledged": true,
+ *     "deletedCount": 0
+ *   }
+ */
+router.delete("/notes/:noteId", noteController.deleteNote);
+
+/**
+ * @api {delete} /api/notes/:noteId Delete a note by ID
  * @apiGroup Notes
  * @apiParam {String} noteId Note ID.
  * @apiUse Note
@@ -71,6 +85,6 @@ router.put("/notes/:noteId", noteController.updateNote);
  *     "content": "Deleted Content"
  *   }
  */
-router.delete("/notes/:noteId", noteController.deleteNote);
+router.get("/notes/:noteId", noteController.deleteNote);
 
 module.exports = router;

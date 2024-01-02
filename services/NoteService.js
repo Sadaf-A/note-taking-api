@@ -25,16 +25,13 @@ exports.getAllNotes = async () => {
 };
 
 exports.getNoteById = async (noteId) => {
-  try {
-    const note = await NoteModel.findOne({ noteId });
-    if (!note) {
-      throw new Error("Note not found");
+    try {
+      const note = await NoteModel.find({_id: noteId});
+      return note;
+    } catch (err) {
+      console.error(err);
     }
-    return note;
-  } catch (err) {
-    console.error(err);
-  }
-};
+  };
 
 exports.updateNote = async (noteId, updatedData) => {
   try {
@@ -55,7 +52,7 @@ exports.updateNote = async (noteId, updatedData) => {
 
 exports.deleteNote = async (noteId) => {
   try {
-    const deletedNote = await NoteModel.findByIdAndDelete(noteId);
+    const deletedNote = await NoteModel.deleteOne({ _id: noteId });
     if (!deletedNote) {
       throw new Error("Note not found");
     }
