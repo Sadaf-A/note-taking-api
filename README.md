@@ -1,4 +1,4 @@
-# Welcome to Blog Analytics with lodash! 🚀
+# Welcome to Note Taking with Express! 🚀
 
 Hey there, Note Taker! 📚 Are you eager to dive into Note Taking? Look no further!
 
