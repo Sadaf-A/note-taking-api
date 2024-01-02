@@ -3,9 +3,11 @@ const basicAuth = require("express-basic-auth");
 
 const app = express();
 
-app.use(basicAuth({
-    users: { 'user': 'password' }
-}))
+app.use(
+  basicAuth({
+    users: { user: "password" },
+  }),
+);
 
 const mongoose = require("mongoose");
 
@@ -23,14 +25,14 @@ db.once("open", () => {
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Hello World!");
+  res.send("Hello World!");
 });
 
 const noteRoutes = require("./routes/NoteRoutes");
 app.use("/api", noteRoutes);
 
 const server = app.listen(3000, () => {
-    console.log("Server is running on port 3000.");
+  console.log("Server is running on port 3000.");
 });
 
 module.exports = { app, server };
