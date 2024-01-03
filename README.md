@@ -22,15 +22,13 @@ Getting started is as easy as pie! 🥧 Just follow these steps:
 
 3. The basic-auth credentials are { 'user', 'password' }
 
-4. Use the provided functions to analyze your blogs and uncover hidden gems! 🕵️‍♂️lable
-
 5. Run tests using the `package.json` scripts
 
 6. Read the docs available in the doc folder by opening the `index.html` file
 
 ## Sneak Peek
 
-Take a sneak peek at what Blog Analytics looks like in action:
+Take a sneak peek at what the Note Taking API looks like in action:
 
 | Create Note | Update Note |
 |-----------------------------|-----------------------------|
